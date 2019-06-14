@@ -22,7 +22,7 @@ namespace WcfMsmqService.Services
             {
                 Console.WriteLine("Recieved subject: " + driver);
 
-                _ = UnitOfWork.Value.SubjectRepostitory.CreateAsync(JsonConvert.DeserializeObject<Subject>(driver)).Result;
+                _ = UnitOfWork.Value.TrainRepostitory.CreateAsync(JsonConvert.DeserializeObject<Train>(driver)).Result;
             }
             catch (Exception e)
             {
@@ -38,16 +38,16 @@ namespace WcfMsmqService.Services
             try
             {
                 Console.WriteLine("Recieved updated subject: " + driver);
-                var driverObj = JsonConvert.DeserializeObject<Subject>(driver);
+                var driverObj = JsonConvert.DeserializeObject<Train>(driver);
 
                 var guid = driverObj.Id;
-                var item = UnitOfWork.Value.SubjectRepostitory.GetAllEntitiesAsync().Result.Where(x => x.Id == guid).FirstOrDefault();
+                var item = UnitOfWork.Value.TrainRepostitory.GetAllEntitiesAsync().Result.Where(x => x.Id == guid).FirstOrDefault();
 
                 item.Name = driverObj.Name;
                 item.FinalTestType = driverObj.FinalTestType;
-                item.Hours = driverObj.Hours;
+                item.AmountOfCarts = driverObj.AmountOfCarts;
 
-                _ = UnitOfWork.Value.SubjectRepostitory.UpdateAsync(item).Result;
+                _ = UnitOfWork.Value.TrainRepostitory.UpdateAsync(item).Result;
             }
             catch (Exception e)
             {
@@ -63,7 +63,7 @@ namespace WcfMsmqService.Services
             {
                 Console.WriteLine("Remove subject with id: " + driverId);
                 var guid = Guid.Parse(driverId);
-                UnitOfWork.Value.SubjectRepostitory.DeleteAsync(guid);
+                UnitOfWork.Value.TrainRepostitory.DeleteAsync(guid);
             }
             catch (Exception e)
             {
@@ -138,12 +138,12 @@ namespace WcfMsmqService.Services
         {
             try
             {
-                Console.WriteLine("Recieved Group: " + route);
+                Console.WriteLine("Recieved Cart: " + route);
 
-                var routeObj = JsonConvert.DeserializeObject<Group>(route);
+                var routeObj = JsonConvert.DeserializeObject<Cart>(route);
 
 
-                _ = UnitOfWork.Value.GroupRepository.CreateAsync(routeObj).Result;
+                _ = UnitOfWork.Value.CartRepository.CreateAsync(routeObj).Result;
             }
             catch (Exception e)
             {
@@ -157,19 +157,19 @@ namespace WcfMsmqService.Services
         {
             try
             {
-                Console.WriteLine("Recieved updated Group: " + route);
-                var routeObj = JsonConvert.DeserializeObject<Group>(route);
+                Console.WriteLine("Recieved updated Cart: " + route);
+                var routeObj = JsonConvert.DeserializeObject<Cart>(route);
 
                 var guid = routeObj.Id;
 
-                var item = UnitOfWork.Value.GroupRepository.GetAllEntitiesAsync().Result.FirstOrDefault(x => x.Id == guid);
+                var item = UnitOfWork.Value.CartRepository.GetAllEntitiesAsync().Result.FirstOrDefault(x => x.Id == guid);
 
-                item.GroupName = routeObj.GroupName;
-                item.StudyYear = routeObj.StudyYear;
-                item.MaxStudents = routeObj.MaxStudents;
+                item.Name = routeObj.Name;
+                item.TrainId = routeObj.TrainId;
+                item.MaxCapacity = routeObj.MaxCapacity;
 
 
-                _ = UnitOfWork.Value.GroupRepository.UpdateAsync(item).Result;
+                _ = UnitOfWork.Value.CartRepository.UpdateAsync(item).Result;
             }
             catch (Exception e)
             {
@@ -183,9 +183,9 @@ namespace WcfMsmqService.Services
         {
             try
             {
-                Console.WriteLine("Remove Group with id: " + routeId);
+                Console.WriteLine("Remove Cart with id: " + routeId);
                 var guid = Guid.Parse(routeId);
-                _ = UnitOfWork.Value.GroupRepository.DeleteAsync(guid).Result;
+                _ = UnitOfWork.Value.CartRepository.DeleteAsync(guid).Result;
             }
             catch (Exception e)
             {

@@ -1,44 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="CreateSubject">
+  <xs:element name="CreateTrain">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Train" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateSubject">
+  <xs:element name="UpdateTrain">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="updatedSubject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="updatedTrain" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveSubject">
+  <xs:element name="RemoveTrain">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SubjectId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TrainId" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateGroup">
+  <xs:element name="CreateCart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cart" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateGroup">
+  <xs:element name="UpdateCart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="updatedGroup" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="updatedCart" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveGroup">
+  <xs:element name="RemoveCart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GroupId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CartId" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

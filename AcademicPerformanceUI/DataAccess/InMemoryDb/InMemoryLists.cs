@@ -8,29 +8,23 @@ namespace DataAccess.InMemoryDb
     {
         static InMemoryLists()
         {
-            Groups = new List<Group>();
-            Students = new List<Student>();
-            Subjects = new List<Subject>();
-            Tests = new List<Test>();
-            SubjectInGroups = new List<SubjectInGroup>();
-            TestResults = new List<TestResult>();
-            Teachers = new List<Teacher>();
+            Groups = new List<Cart>();
+            Subjects = new List<Train>();
+            TestResults = new List<Ticket>();
+            Teachers = new List<Passanger>();
 
-            Groups.Add(new Group()
+            Groups.Add(new Cart()
             {
                 Id = Guid.NewGuid(),
-                GroupName = "Test",
-                StudyYear = 2,
-                MaxStudents = 30
+                Name = "Test",
+                TrainId = Guid.NewGuid(),
+                MaxCapacity = 30
             });
         }
 
-        public static List<Group> Groups;
-        public static List<Student> Students;
-        public static List<Subject> Subjects;
-        public static List<Teacher> Teachers;
-        public static List<Test> Tests;
-        public static List<SubjectInGroup> SubjectInGroups;
-        public static List<TestResult> TestResults;
+        public static List<Cart> Groups;
+        public static List<Train> Subjects;
+        public static List<Passanger> Teachers;
+        public static List<Ticket> TestResults;
     }
 }

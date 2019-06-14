@@ -22,7 +22,7 @@ namespace WcfRestService.Services
                         var a = groupDto.GroupName;
                         var x = groupDto.MaxStudents;
                         var s = groupDto.StudyYear;
-                        return new Group() { Id = groupDto.Id, GroupName = groupDto.GroupName, MaxStudents = groupDto.MaxStudents, StudyYear = groupDto.StudyYear };
+                        return new Cart() { Id = groupDto.Id, Name = groupDto.GroupName, MaxCapacity = groupDto.MaxStudents, TrainId = groupDto.StudyYear };
                     }
                 case "StudentDto":
                     {
@@ -33,11 +33,11 @@ namespace WcfRestService.Services
                     {
                         var dtoEntity = (SubjectDto)(IBaseDto)entity;
                         var enumInt = (int)dtoEntity.FinalTestType;
-                        return new Subject()
+                        return new Train()
                         {
                             Id = dtoEntity.Id,
                             FinalTestType = (Model.FinalTestType)enumInt,
-                            Hours = dtoEntity.Hours,
+                            AmountOfCarts = dtoEntity.Hours,
                             Name = dtoEntity.Name
                         };
                     }
@@ -54,7 +54,7 @@ namespace WcfRestService.Services
                 case "TeacherDto":
                     {
                         var dtoEntity = (TeacherDto)(IBaseDto)entity;
-                        return new Teacher()
+                        return new Passanger()
                         {
                             Id = dtoEntity.Id,
                             FirstName = dtoEntity.FirstName,
@@ -78,12 +78,12 @@ namespace WcfRestService.Services
                 case "TestResultDto":
                     {
                         var dtoEntity = (TestResultDto)(IBaseDto)entity;
-                        return new TestResult()
+                        return new Ticket()
                         {
                             Id = dtoEntity.Id,
                             Mark = dtoEntity.Mark,
-                            TestId = dtoEntity.TestId,
-                            StudentId = dtoEntity.StudentId
+                            CartId = dtoEntity.TestId,
+                            PassangerId = dtoEntity.StudentId
                         };
                     }
                 default: throw new NotSupportedException();
@@ -95,25 +95,25 @@ namespace WcfRestService.Services
             var dtoTypeName = entity.GetType().Name;
             switch (dtoTypeName)
             {
-                case "Group":
+                case "Cart":
                     {
-                        var groupDto = (Group)entity;
-                        return new GroupDto() { Id = groupDto.Id, GroupName = groupDto.GroupName, MaxStudents = groupDto.MaxStudents, StudyYear = groupDto.StudyYear };
+                        var groupDto = (Cart)entity;
+                        return new GroupDto() { Id = groupDto.Id, GroupName = groupDto.Name, MaxStudents = groupDto.MaxCapacity, StudyYear = groupDto.TrainId };
                     }
                 case "Student":
                     {
                         var dtoEntity = (Student)entity;
                         return new StudentDto() { Id = dtoEntity.Id, FirstName = dtoEntity.FirstName, LastName = dtoEntity.LastName, PhoneNumber = dtoEntity.PhoneNumber, GroupId = dtoEntity.GroupId };
                     }
-                case "Subject":
+                case "Train":
                     {
-                        var dtoEntity = (Subject)entity;
+                        var dtoEntity = (Train)entity;
                         var enumInt = (int)dtoEntity.FinalTestType;
                         return new SubjectDto()
                         {
                             Id = dtoEntity.Id,
                             FinalTestType = (Dto.FinalTestType)enumInt,
-                            Hours = dtoEntity.Hours,
+                            Hours = dtoEntity.AmountOfCarts,
                             Name = dtoEntity.Name
                         };
                     }
@@ -127,9 +127,9 @@ namespace WcfRestService.Services
                             SubjectId = dtoEntity.SubjectId
                         };
                     }
-                case "Teacher":
+                case "Passanger":
                     {
-                        var dtoEntity = (Teacher)entity;
+                        var dtoEntity = (Passanger)entity;
                         return new TeacherDto()
                         {
                             Id = dtoEntity.Id,
@@ -151,15 +151,15 @@ namespace WcfRestService.Services
                             TeacherId = dtoEntity.TeacherId
                         };
                     }
-                case "TestResult":
+                case "Ticket":
                     {
-                        var dtoEntity = (TestResult)entity;
+                        var dtoEntity = (Ticket)entity;
                         return new TestResultDto()
                         {
                             Id = dtoEntity.Id,
                             Mark = dtoEntity.Mark,
-                            TestId = dtoEntity.TestId,
-                            StudentId = dtoEntity.StudentId
+                            TestId = dtoEntity.CartId,
+                            StudentId = dtoEntity.PassangerId
                         };
                     }
                 default: throw new NotSupportedException();

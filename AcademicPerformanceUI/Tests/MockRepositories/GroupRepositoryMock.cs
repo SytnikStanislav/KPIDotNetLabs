@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace Tests.MockRepositories
 {
-    public class GroupRepositoryMock:IRepository<Group>
+    public class GroupRepositoryMock:IRepository<Cart>
     {
-        private List<Group> groups = new List<Group>();
+        private List<Cart> groups = new List<Cart>();
 
-        public void AddCollection(List<Group> entities)
+        public void AddCollection(List<Cart> entities)
         {
             groups.AddRange(entities);
         }
 
-        public Task<Group> CreateAsync(Group entity)
+        public Task<Cart> CreateAsync(Cart entity)
         {
             groups.Add(entity);
             return Task.FromResult(entity);
         }
 
-        public Group CreateEmptyObject() => new Group();
+        public Cart CreateEmptyObject() => new Cart();
 
         public Task<bool> DeleteAsync(Guid id)
         {
@@ -31,28 +31,28 @@ namespace Tests.MockRepositories
             return Task.FromResult(true);
         }
 
-        public Task<List<Group>> GetAllEntitiesAsync() => Task.FromResult(groups);
-        public Task<Group> GetFirstOrDefaultAsync(Expression<Func<Group, bool>> predicate = null)
+        public Task<List<Cart>> GetAllEntitiesAsync() => Task.FromResult(groups);
+        public Task<Cart> GetFirstOrDefaultAsync(Expression<Func<Cart, bool>> predicate = null)
         {
-            Group group = null;
-            if (predicate == null) group =  groups.FirstOrDefault();
-            group = groups.AsQueryable().FirstOrDefault(predicate);
-            return Task.FromResult(group);
+            Cart cart = null;
+            if (predicate == null) cart =  groups.FirstOrDefault();
+            cart = groups.AsQueryable().FirstOrDefault(predicate);
+            return Task.FromResult(cart);
         }
          
 
-        public Task<Group> UpdateAsync(Group entity)
+        public Task<Cart> UpdateAsync(Cart entity)
         {
             var group = groups.FirstOrDefault(item => item.Id == entity.Id);
-            group.GroupName = entity.GroupName;
-            group.MaxStudents = entity.MaxStudents;
-            group.StudyYear = entity.StudyYear;
+            group.Name = entity.Name;
+            group.MaxCapacity = entity.MaxCapacity;
+            group.TrainId = entity.TrainId;
             return Task.FromResult(entity);
         }
 
         public void Clear()
         {
-            groups = new List<Group>();
+            groups = new List<Cart>();
         }
     }
 }

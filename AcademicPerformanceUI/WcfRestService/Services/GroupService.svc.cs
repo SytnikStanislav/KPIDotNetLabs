@@ -7,9 +7,9 @@ using WcfRestService.ServiceInterfaces;
 namespace WcfRestService
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
-    public class GroupService : BaseService<GroupDto, Group>, IGroupService 
+    public class GroupService : BaseService<GroupDto, Cart>, IGroupService 
     {
-        public GroupService(IRepository<Group> repository):base(repository)
+        public GroupService(IRepository<Cart> repository):base(repository)
         {
                 
         }

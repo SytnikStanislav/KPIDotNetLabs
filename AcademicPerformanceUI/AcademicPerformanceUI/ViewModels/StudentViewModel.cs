@@ -17,7 +17,7 @@ namespace AcademicPerformanceUI.ViewModels
 
         public override void LoadConnectedData()
         {
-            GroupIds = new ObservableCollection<Guid>(UnitOfWork.GroupRepository.GetAllEntitiesAsync().Result.Select(s => s.Id));
+            GroupIds = new ObservableCollection<Guid>(UnitOfWork.CartRepository.GetAllEntitiesAsync().Result.Select(s => s.Id));
         }
     }
 }

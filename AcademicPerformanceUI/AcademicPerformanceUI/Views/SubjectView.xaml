@@ -30,7 +30,7 @@
                         <StackPanel Orientation="Vertical">
                             <TextBlock FontSize="15" Text="{Binding Id, StringFormat='Id: {0}'}"/>
                             <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding Name, StringFormat='Name: {0}'}"/>
-                            <TextBlock FontSize="15" Text="{Binding Hours, StringFormat='Hours : {0}'}"/>
+                            <TextBlock FontSize="15" Text="{Binding AmountOfCarts, StringFormat='Hours : {0}'}"/>
                             <TextBlock FontSize="15" Text="{Binding FinalTestType, StringFormat='Final test: {0}'}"/>
                         </StackPanel>
                     </StackPanel>
@@ -41,7 +41,7 @@
             <Label Margin="10,70,10,0" Content="Input name:"></Label>
             <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.Name}"/>
             <Label Margin="10,0,10,0" Content="Input hours:"></Label>
-            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.Hours}"/>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.AmountOfCarts}"/>
             <Label Margin="10,0,10,0" Content="Input final test type:"></Label>
             <ComboBox Margin="10,0,10,0" Height="23" SelectedItem="{Binding SelectedEntity.FinalTestType}"
                       ItemsSource="{Binding Source={StaticResource FinalTestType}}"/>

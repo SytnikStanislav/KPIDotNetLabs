@@ -9,7 +9,7 @@ namespace WebFormsMsMqClient
 {
     public partial class GroupsPage : System.Web.UI.Page
     {
-        private readonly IRepository<Group> Repository = Singleton.UnitOfWork.GroupRepository;
+        private readonly IRepository<Cart> Repository = Singleton.UnitOfWork.CartRepository;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
 
         protected void Page_Load(object sender, EventArgs e)

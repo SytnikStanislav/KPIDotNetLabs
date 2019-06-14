@@ -13,38 +13,26 @@ namespace DataAccess.SqlDbConnection
             ConnectionString = connectionString;
         }
 
-        private IRepository<Group> groupRepository;
-        public IRepository<Group> GroupRepository => groupRepository ?? (groupRepository = new GroupRepository(ConnectionString));
+        private IRepository<Cart> cartRepository;
+        public IRepository<Cart> CartRepository => cartRepository ?? (cartRepository = new CartRepository(ConnectionString));
 
-        private IRepository<Student> studentRepository;
-        public IRepository<Student> StudentRepository => studentRepository ?? (studentRepository = new StudentRepository(ConnectionString));
+        private IRepository<Train> trainRepostitory;
+        public IRepository<Train> TrainRepostitory => trainRepostitory ?? (trainRepostitory = new TrainRepository(ConnectionString));
 
-        private IRepository<Subject> subjectRepostitory;
-        public IRepository<Subject> SubjectRepostitory => subjectRepostitory ?? (subjectRepostitory = new SubjectRepository(ConnectionString));
+        private IRepository<Passanger> passangerRepository;
+        public IRepository<Passanger> PassangerRepository => passangerRepository ?? (passangerRepository = new PassangerRepository(ConnectionString));
 
-        private IRepository<SubjectInGroup> subjectInGroupRepository;
-        public IRepository<SubjectInGroup> SubjectInGroupRepository => subjectInGroupRepository ?? (subjectInGroupRepository = new SubjectInGroupRepository(ConnectionString));
-
-        private IRepository<Teacher> teacherRepository;
-        public IRepository<Teacher> TeacherRepository => teacherRepository ?? (teacherRepository = new TeacherRepository(ConnectionString));
-
-        private IRepository<Test> testRepository;
-        public IRepository<Test> TestRepository => testRepository ?? (testRepository = new TestRepository(ConnectionString));
-
-        private IRepository<TestResult> testResultRepository;
-        public IRepository<TestResult> TestResultRepository => testResultRepository ?? (testResultRepository = new TestResultRepository(ConnectionString));
+        private IRepository<Ticket> ticketRepository;
+        public IRepository<Ticket> TicketRepository => ticketRepository ?? (ticketRepository = new TicketRepository(ConnectionString));
 
         public IRepository<Entity> GetRepositoryByEntityType<Entity>() where Entity : IEntity
         {
             var entityType = typeof(Entity);
 
-            if (entityType == typeof(Group)) return (IRepository<Entity>)GroupRepository;
-            if (entityType == typeof(Student)) return (IRepository<Entity>)StudentRepository;
-            if (entityType == typeof(Subject)) return (IRepository<Entity>)SubjectRepostitory;
-            if (entityType == typeof(SubjectInGroup)) return (IRepository<Entity>)SubjectInGroupRepository;
-            if (entityType == typeof(Teacher)) return (IRepository<Entity>)TeacherRepository;
-            if (entityType == typeof(Test)) return (IRepository<Entity>)TestRepository;
-            if (entityType == typeof(TestResult)) return (IRepository<Entity>)TestResultRepository;
+            if (entityType == typeof(Cart)) return (IRepository<Entity>)CartRepository;
+            if (entityType == typeof(Train)) return (IRepository<Entity>)TrainRepostitory;
+            if (entityType == typeof(Passanger)) return (IRepository<Entity>)PassangerRepository;
+            if (entityType == typeof(Ticket)) return (IRepository<Entity>)TicketRepository;
 
             throw new NotSupportedException();
         }

@@ -13,8 +13,8 @@ namespace WebFormsMsMqClient
 {
     public partial class SubjectInGroupCreatePage : System.Web.UI.Page
     {
-        private readonly IRepository<Subject> SubjectRepository = Singleton.UnitOfWork.SubjectRepostitory;
-        private readonly IRepository<Group> GroupRepository = Singleton.UnitOfWork.GroupRepository;
+        private readonly IRepository<Train> SubjectRepository = Singleton.UnitOfWork.TrainRepostitory;
+        private readonly IRepository<Cart> GroupRepository = Singleton.UnitOfWork.CartRepository;
         private readonly IRepository<SubjectInGroup> SubjectInGroupRepository = Singleton.UnitOfWork.SubjectInGroupRepository;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
         private Guid _id;

@@ -29,7 +29,6 @@ namespace DataAccess.SqlDbConnection
                     case "Int64": sqltext.Append($" int,"); break;
                     case "Double": sqltext.Append($" float,"); break;
                     case "DateTime": sqltext.Append($" datetime,"); break;
-                    case "FinalTestType": sqltext.Append($" int,"); break;
                     default:
                         break;
                 }

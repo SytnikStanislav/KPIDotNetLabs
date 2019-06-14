@@ -2,7 +2,7 @@
 
 namespace AcademicPerformanceUI.ViewModels
 {
-    public class GroupViewModel:BaseViewModel<Group>
+    public class GroupViewModel:BaseViewModel<Cart>
     {
         public GroupViewModel()
         {
@@ -11,7 +11,7 @@ namespace AcademicPerformanceUI.ViewModels
 
         public override void LoadConnectedData()
         {
-            SelectedEntity = new Group();
+            SelectedEntity = new Cart();
         }
     }
 }

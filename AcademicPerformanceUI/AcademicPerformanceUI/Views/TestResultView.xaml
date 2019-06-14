@@ -7,7 +7,7 @@
       xmlns:viewModels="clr-namespace:AcademicPerformanceUI.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TestResultView">
+      Title="TicketView">
 
     <Page.DataContext>
         <viewModels:TestResultViewModel>
@@ -21,8 +21,8 @@
                         <StackPanel Orientation="Vertical">
                             <TextBlock FontSize="15" Text="{Binding Id, StringFormat='Id: {0}'}"/>
                             <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding Mark, StringFormat='Mark: {0}'}"/>
-                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding TestId, StringFormat='Test id: {0}'}"/>
-                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding StudentId, StringFormat='Student id: {0}'}"/>
+                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding CartId, StringFormat='Test id: {0}'}"/>
+                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding PassangerId, StringFormat='Student id: {0}'}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
@@ -32,10 +32,10 @@
             <Label Margin="10,10,10,0" Content="Input mark:"></Label>
             <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.Mark}"/>
             <Label Margin="10,0,10,0" Content="Input student id:"></Label>
-            <ComboBox Margin="10,0,10,0" Height="23" SelectedItem="{Binding SelectedEntity.StudentId}"
+            <ComboBox Margin="10,0,10,0" Height="23" SelectedItem="{Binding SelectedEntity.PassangerId}"
                       ItemsSource="{Binding StudentIds}"/>
             <Label Margin="10,0,10,0" Content="Input test id:"></Label>
-            <ComboBox Margin="10,0,10,0" Height="23" SelectedItem="{Binding SelectedEntity.TestId}"
+            <ComboBox Margin="10,0,10,0" Height="23" SelectedItem="{Binding SelectedEntity.CartId}"
                       ItemsSource="{Binding TestIds}"/>
             
             <Button Margin="80,20,80,0" Content="Create" Click="Add_TestResult_OnClick"/>

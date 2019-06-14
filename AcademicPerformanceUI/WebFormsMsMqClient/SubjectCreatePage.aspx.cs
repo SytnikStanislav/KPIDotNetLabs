@@ -12,7 +12,7 @@ namespace WebFormsMsMqClient
 {
     public partial class SubjectCreatePage : System.Web.UI.Page
     {
-        private readonly IRepository<Subject> Repository = Singleton.UnitOfWork.SubjectRepostitory;
+        private readonly IRepository<Train> Repository = Singleton.UnitOfWork.TrainRepostitory;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
         private Guid _id;
         protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace WebFormsMsMqClient
                     var _loadedSubject = Repository.GetAllEntitiesAsync().Result.Where(i => i.Id == Guid.Parse(id)).FirstOrDefault();
 
                     subjectName.Text = _loadedSubject.Name;
-                    subjectHours.Text = _loadedSubject.Hours.ToString();
+                    subjectHours.Text = _loadedSubject.AmountOfCarts.ToString();
                     subjectTestType.Text = _loadedSubject.FinalTestType.ToString();
 
                     btnCreate.Visible = false;
@@ -45,16 +45,16 @@ namespace WebFormsMsMqClient
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            Subject subject = new Subject();
-            subject.Id = Guid.NewGuid();
-            subject.Name = subjectName.Text;
-            subject.Hours = int.Parse(subjectHours.Text);
+            Train train = new Train();
+            train.Id = Guid.NewGuid();
+            train.Name = subjectName.Text;
+            train.AmountOfCarts = int.Parse(subjectHours.Text);
             Enum.TryParse(subjectTestType.Text, out DataAccess.Models.FinalTestType rang);
-            subject.FinalTestType = rang;
+            train.FinalTestType = rang;
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
-                var serialized = JsonConvert.SerializeObject(subject);
+                var serialized = JsonConvert.SerializeObject(train);
                 serviceClient.CreateSubject(serialized);
                 scope.Complete();
             }
@@ -68,7 +68,7 @@ namespace WebFormsMsMqClient
         {
             var subject = Repository.GetAllEntitiesAsync().Result.Where(sub => sub.Id == _id).FirstOrDefault();
             subject.Name = subjectName.Text;
-            subject.Hours = int.Parse(subjectHours.Text);
+            subject.AmountOfCarts = int.Parse(subjectHours.Text);
             Enum.TryParse(subjectTestType.Text, out FinalTestType rang);
             subject.FinalTestType = rang;
 

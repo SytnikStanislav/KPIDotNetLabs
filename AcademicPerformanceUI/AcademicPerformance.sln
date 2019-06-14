@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademicPerformanceUI", "AcademicPerformanceUI\AcademicPerformanceUI.csproj", "{114ECB83-6128-424D-B5E2-DF87108298B2}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{AF1923E5-567D-4ECE-9CB4-4424E840D209}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfRestService", "WcfRestService\WcfRestService.csproj", "{FB7846AC-4EC7-4F5A-914A-A7B84C1CBF81}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudAsmxWebService", "CrudWebService\CrudAsmxWebService.csproj", "{E70CDEB2-64F4-4A87-B6E4-2FDD8BE56127}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsMsMqClient", "WebFormsMsMqClient\WebFormsMsMqClient.csproj", "{830E8EC2-3768-476A-AB82-CC04D4AA3F8B}"
 EndProject
@@ -43,10 +41,6 @@ Global
 		{FB7846AC-4EC7-4F5A-914A-A7B84C1CBF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB7846AC-4EC7-4F5A-914A-A7B84C1CBF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB7846AC-4EC7-4F5A-914A-A7B84C1CBF81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E70CDEB2-64F4-4A87-B6E4-2FDD8BE56127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E70CDEB2-64F4-4A87-B6E4-2FDD8BE56127}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E70CDEB2-64F4-4A87-B6E4-2FDD8BE56127}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E70CDEB2-64F4-4A87-B6E4-2FDD8BE56127}.Release|Any CPU.Build.0 = Release|Any CPU
 		{830E8EC2-3768-476A-AB82-CC04D4AA3F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{830E8EC2-3768-476A-AB82-CC04D4AA3F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{830E8EC2-3768-476A-AB82-CC04D4AA3F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU

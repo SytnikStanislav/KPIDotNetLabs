@@ -74,13 +74,10 @@ namespace DataAccess.LinqToSql.Repository
             IEntity newObject = null;
             switch (type)
             {
-                case "Group": newObject = new Group(); break;
-                case "Student": newObject = new Student(); break;
-                case "Subject": newObject = new Subject(); break;
-                case "Teacher": newObject = new Teacher(); break;
-                case "Test": newObject = new Test(); break;
-                case "SubjectInGroup": newObject = new SubjectInGroup(); break;
-                case "TestResult": newObject = new TestResult(); break;
+                case "Cart": newObject = new Cart(); break;
+                case "Train": newObject = new Train(); break;
+                case "Passanger": newObject = new Passanger(); break;
+                case "Ticket": newObject = new Ticket(); break;
                 default: throw new Exception("No such type");
             }
             return (TEntity)newObject;

@@ -2,11 +2,11 @@
 
 namespace AcademicPerformanceUI.ViewModels
 {
-    public class SubjectViewModel:BaseViewModel<Subject>
+    public class SubjectViewModel:BaseViewModel<Train>
     {
         public SubjectViewModel()
         {
-            SelectedEntity = new Subject();
+            SelectedEntity = new Train();
             LoadConnectedData();
         }
 

@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace AcademicPerformanceUI.ViewModels
 {
-    public class TestResultViewModel:BaseViewModel<TestResult>
+    public class TestResultViewModel:BaseViewModel<Ticket>
     {
         public ObservableCollection<Guid> StudentIds { get; set; }
         public ObservableCollection<Guid> TestIds { get; set; }
 
         public TestResultViewModel()
         {
-            SelectedEntity = new TestResult();
+            SelectedEntity = new Ticket();
             LoadConnectedData();
         }
 

@@ -21,9 +21,9 @@
                            <StackPanel>
                             <StackPanel Orientation="Vertical">
                                 <TextBlock FontSize="15" Text="{Binding Id, StringFormat='Id: {0}'}"/>
-                                <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding GroupName, StringFormat='Name: {0}'}"/>
-                                <TextBlock FontSize="15" Text="{Binding StudyYear, StringFormat='Study year: {0}'}"/>
-                                <TextBlock FontSize="15" Text="{Binding MaxStudents, StringFormat='Max students: {0}'}"/>
+                                <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding Name, StringFormat='Name: {0}'}"/>
+                                <TextBlock FontSize="15" Text="{Binding TrainId, StringFormat='Study year: {0}'}"/>
+                                <TextBlock FontSize="15" Text="{Binding MaxCapacity, StringFormat='Max students: {0}'}"/>
                             </StackPanel>
                     </StackPanel>
                 </DataTemplate>
@@ -31,11 +31,11 @@
         </ListBox>
         <StackPanel Orientation="Vertical" Margin="404,0,0,10">
             <Label Margin="10,70,10,0" Content="Input name:"></Label>
-            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.GroupName}"/>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.Name}"/>
             <Label Margin="10,0,10,0" Content="Input study year:"></Label>
-            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.StudyYear}"/>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.TrainId}"/>
             <Label Margin="10,0,10,0" Content="Input max students:"></Label>
-            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.MaxStudents}"/>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.MaxCapacity}"/>
 
             <Button Margin="80,20,80,0" Content="Create" Click="Add_Group_OnClick"/>
             <Button Margin="80,20,80,0" Content="Delete" Click="Remove_Group_OnClick"/>

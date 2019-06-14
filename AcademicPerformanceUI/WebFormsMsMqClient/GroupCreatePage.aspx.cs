@@ -13,7 +13,7 @@ namespace WebFormsMsMqClient
     public partial class GroupCreatePage : System.Web.UI.Page
     {
         private Guid _id;
-        private readonly IRepository<Group> Repository = Singleton.UnitOfWork.GroupRepository;
+        private readonly IRepository<Cart> Repository = Singleton.UnitOfWork.CartRepository;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,9 +30,9 @@ namespace WebFormsMsMqClient
                 {
                     var _loadedSubject = Repository.GetAllEntitiesAsync().Result.Where(i => i.Id == Guid.Parse(id)).FirstOrDefault();
 
-                    groupName.Text = _loadedSubject.GroupName;
-                    groupMaxStudents.Text = _loadedSubject.MaxStudents.ToString();
-                    groupStudyYear.Text = _loadedSubject.StudyYear.ToString();
+                    groupName.Text = _loadedSubject.Name;
+                    groupMaxStudents.Text = _loadedSubject.MaxCapacity.ToString();
+                    groupStudyYear.Text = _loadedSubject.TrainId.ToString();
 
                     btnCreate.Visible = false;
                     Label.Text = "Update group";
@@ -47,11 +47,11 @@ namespace WebFormsMsMqClient
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            Group subject = new Group();
+            Cart subject = new Cart();
             subject.Id = Guid.NewGuid();
-            subject.GroupName = groupName.Text;
-            subject.MaxStudents = int.Parse(groupMaxStudents.Text);
-            subject.StudyYear = int.Parse(groupStudyYear.Text);
+            subject.Name = groupName.Text;
+            subject.MaxCapacity = int.Parse(groupMaxStudents.Text);
+            subject.TrainId = int.Parse(groupStudyYear.Text);
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
@@ -67,9 +67,9 @@ namespace WebFormsMsMqClient
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             var group = Repository.GetAllEntitiesAsync().Result.Where(sub => sub.Id == _id).FirstOrDefault();
-            group.GroupName = groupName.Text;
-            group.MaxStudents = int.Parse(groupMaxStudents.Text);
-            group.StudyYear = int.Parse(groupStudyYear.Text);
+            group.Name = groupName.Text;
+            group.MaxCapacity = int.Parse(groupMaxStudents.Text);
+            group.TrainId = int.Parse(groupStudyYear.Text);
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {

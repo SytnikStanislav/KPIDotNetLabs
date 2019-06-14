@@ -17,7 +17,7 @@ namespace AcademicPerformanceUI.ViewModels
         
         public override void LoadConnectedData()
         {
-            TeacherIds = new ObservableCollection<Guid>(UnitOfWork.TeacherRepository.GetAllEntitiesAsync().Result.Select(o => o.Id));
+            TeacherIds = new ObservableCollection<Guid>(UnitOfWork.PassangerRepository.GetAllEntitiesAsync().Result.Select(o => o.Id));
         }
     }
 }

@@ -12,7 +12,7 @@
                     <span>Id: <%#Eval("Id") %></span>
                     <h5>Name: <%#Eval("Name") %></h5>
                     <h6>FinalTestType:  <%#Eval("FinalTestType") %></h6>
-                    <h6>Hours:  <%#Eval("Hours") %></h6>
+                    <h6>AmountOfCarts:  <%#Eval("AmountOfCarts") %></h6>
                 </div>
                 <asp:Button ID="test" runat="server" CommandName="Update" CommandArgument='<%# Eval("Id") %>' class='btn btn-info' Text="Update"></asp:Button>
                 <asp:Button ID="btnDelete" runat="server" CommandName="Delete" CommandArgument='<%# Eval("Id") %>' class='btn btn-info' Text="Delete"></asp:Button>

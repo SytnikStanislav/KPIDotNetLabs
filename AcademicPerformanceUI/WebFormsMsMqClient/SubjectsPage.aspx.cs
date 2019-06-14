@@ -10,7 +10,7 @@ namespace WebFormsMsMqClient
 {
     public partial class SubjectsPage : System.Web.UI.Page
     {
-        private readonly IRepository<Subject> Repository = Singleton.UnitOfWork.SubjectRepostitory;
+        private readonly IRepository<Train> Repository = Singleton.UnitOfWork.TrainRepostitory;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
