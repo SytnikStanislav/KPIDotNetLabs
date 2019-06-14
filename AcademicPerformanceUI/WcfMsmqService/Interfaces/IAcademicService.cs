@@ -5,37 +5,37 @@ namespace WcfMsmqService.Interfaces
     [ServiceContract]
     public interface IAcademicService
     {
-        #region drivers
+        #region Train
         [OperationContract(IsOneWay = true)]
-        void CreateSubject(string Subject);
+        void CreateTrain(string Subject);
 
         [OperationContract(IsOneWay = true)]
-        void UpdateSubject(string updatedSubject);
+        void UpdateTrain(string updatedSubject);
 
         [OperationContract(IsOneWay = true)]
-        void RemoveSubject(string SubjectId);
+        void RemoveTrain(string SubjectId);
         #endregion
 
-        #region shifts
+        #region Cart
         [OperationContract(IsOneWay = true)]
-        void CreateGroup(string Group);
+        void CreateCart(string Group);
 
         [OperationContract(IsOneWay = true)]
-        void UpdateGroup(string updatedGroup);
+        void UpdateCart(string updatedGroup);
 
         [OperationContract(IsOneWay = true)]
-        void RemoveGroup(string GroupId);
+        void RemoveCart(string GroupId);
         #endregion
 
-        #region routes
+        #region Ticket
         [OperationContract(IsOneWay = true)]
-        void CreateSiG(string SiG);
+        void CreateTicket(string SiG);
 
         [OperationContract(IsOneWay = true)]
-        void UpdateSiG(string updatedSiG);
+        void UpdateTicket(string updatedSiG);
 
         [OperationContract(IsOneWay = true)]
-        void RemoveSiG(string SiGId);
+        void RemoveTicket(string SiGId);
         #endregion
     }
 }

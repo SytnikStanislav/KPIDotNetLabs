@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using WcfRestService.DTOModels;
+using DataAccess.Interfaces;
 
 namespace WebFormsClient
 {
-    public class WebClientCrudService<TEntity> where TEntity:IBaseDto
+    public class WebClientCrudService<TEntity> where TEntity:IEntity
     {
         private string serviceName;
 

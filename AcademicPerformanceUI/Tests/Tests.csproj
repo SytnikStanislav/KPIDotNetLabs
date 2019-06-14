@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GroupServiceTests.cs" />
-    <Compile Include="MockRepositories\GroupRepositoryMock.cs" />
+    <Compile Include="MockRepositories\CartRepositoryMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
