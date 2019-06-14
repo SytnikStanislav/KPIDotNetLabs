@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace AcademicPerformanceUI.ViewModels
 {
-    public class TeacherViewModel:BaseViewModel<Passanger>
+    public class PassangerViewModel:BaseViewModel<Passanger>
     {
         public ObservableCollection<Guid> SubjectIds { get; set; }
 
-        public TeacherViewModel()
+        public PassangerViewModel()
         {
             SelectedEntity = new Passanger();
             LoadConnectedData();

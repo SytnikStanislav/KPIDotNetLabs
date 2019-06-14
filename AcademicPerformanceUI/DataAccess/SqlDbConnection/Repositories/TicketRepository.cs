@@ -23,7 +23,7 @@ namespace DataAccess.SqlDbConnection.Repositories
                 {
                     Id = (Guid)reader["Id"],
                     PassangerId = (Guid)reader["PassangerId"],
-                    CartId = (Guid)reader["Studentid"],
+                    CartId = (Guid)reader["CartId"],
                     ArrivalStation = (string)reader["ArrivalStation"],
                     ArrivalDate = (DateTime)reader["ArrivalDate"],
                     DepartureStation = (string)reader["ArrivalStation"],

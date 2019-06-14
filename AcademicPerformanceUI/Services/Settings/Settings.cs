@@ -2,9 +2,9 @@
 {
     public static class SettingList
     {
-        public static SerializationType GetSerializationType { get; set; } = SerializationType.Xml;
-        public static DataProvider GetDataProvider { get; set; } = DataProvider.LinqToSql;
-        public static string GetConnectionString { get; set; } = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\a.timchenko\DOCUMENTS\TestTest.mdf;Integrated Security=True;Connect Timeout=30";
+        public static SerializationType GetSerializationType { get; set; } = SerializationType.Json;
+        public static DataProvider GetDataProvider { get; set; } = DataProvider.SqlDbConnection;
+        public static string GetConnectionString { get; set; } = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=db;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
     }
 
     public enum SerializationType

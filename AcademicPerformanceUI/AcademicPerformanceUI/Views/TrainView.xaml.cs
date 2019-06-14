@@ -6,42 +6,42 @@ using System.Windows.Controls;
 namespace AcademicPerformanceUI.Views
 {
     /// <summary>
-    /// Interaction logic for SubjectView.xaml
+    /// Interaction logic for TrainView.xaml
     /// </summary>
-    public partial class SubjectView : Page
+    public partial class TrainView : Page
     {
-        private SubjectViewModel SubjectViewModel { get; set; }
+        private TrainViewModel TrainViewModel { get; set; }
 
-        public SubjectView()
+        public TrainView()
         {
             InitializeComponent();
-            SubjectViewModel = new SubjectViewModel();
-            DataContext = SubjectViewModel;
+            TrainViewModel = new TrainViewModel();
+            DataContext = TrainViewModel;
         }
 
         private void Add_Subject_OnClick(object sender, RoutedEventArgs e)
         {
-            SubjectViewModel.AddData();
+            TrainViewModel.AddData();
         }
 
         private void Update_Subject_OnClick(object sender, RoutedEventArgs e)
         {
-            SubjectViewModel.UpdateData();
+            TrainViewModel.UpdateData();
         }
 
         private void Remove_Subject_OnClick(object sender, RoutedEventArgs e)
         {
-            SubjectViewModel.RemoveData();
+            TrainViewModel.RemoveData();
         }
 
         private void Save_Subject_OnClick(object sender, RoutedEventArgs e)
         {
-            SubjectViewModel.SaveEntity();
+            TrainViewModel.SaveEntity();
         }
 
         private void SaveAll__Subject_OnClick(object sender, RoutedEventArgs e)
         {
-            SubjectViewModel.SaveAllEntities();
+            TrainViewModel.SaveAllEntities();
         }
 
         public void Upload_EntityList_OnClick(object sender, RoutedEventArgs e)
@@ -49,7 +49,7 @@ namespace AcademicPerformanceUI.Views
             var fileDialog = new OpenFileDialog();
             if (fileDialog.ShowDialog() == true)
             {
-                SubjectViewModel.DeserializeList(fileDialog.FileName);
+                TrainViewModel.DeserializeList(fileDialog.FileName);
             }
         }
     }

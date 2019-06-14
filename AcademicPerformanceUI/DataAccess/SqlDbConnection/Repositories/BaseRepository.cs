@@ -18,7 +18,7 @@ namespace DataAccess.SqlDbConnection.Repository
         {
             this.ConnectionString = connectionString;
             this.SqlHelper = new SqlDbConnectionHelper();
-            ///CreateTables();
+            //CreateTables();
         }
 
         public virtual Task<TEntity> CreateAsync(TEntity entity)
@@ -47,7 +47,10 @@ namespace DataAccess.SqlDbConnection.Repository
             return Task.FromResult(result != 0);
         }
 
-        public virtual void AddCollection(List<TEntity> entities) { throw new NotImplementedException();  }
+        public virtual void AddCollection(List<TEntity> entities)
+        {
+            entities.ForEach(async ent => await CreateAsync(ent));
+        }
 
         public TEntity CreateEmptyObject()
         {

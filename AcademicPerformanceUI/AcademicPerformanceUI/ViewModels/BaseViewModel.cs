@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using DataAccess.Interfaces;
 using Services;
@@ -13,8 +14,15 @@ namespace AcademicPerformanceUI.ViewModels
     {
         public BaseViewModel()
         {
-            Entities = new ObservableCollection<Entity>(Repository.GetAllEntitiesAsync().Result);
+            RefreshList();
         }
+
+        public void RefreshList()
+        {
+            Entities = new ObservableCollection<Entity>(Repository.GetAllEntitiesAsync().Result);
+            LoadConnectedData();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
@@ -122,12 +130,8 @@ namespace AcademicPerformanceUI.ViewModels
             try
             {
                 var service = SerializationServiceFactory.GetSerializationService();
-                List<Entity> entities = new List<Entity>();
+                var entities = Entities.ToList();
 
-                foreach (var item in Entities)
-                {
-                    await Repository.CreateAsync(item);
-                }
                 service.SerializeEntity(entities, $"{typeof(Entity)}List");
             }
             catch (Exception)
@@ -144,7 +148,7 @@ namespace AcademicPerformanceUI.ViewModels
                 List<Entity> entities = new List<Entity>();
                 entities = service.DeserizalizeEntity<List<Entity>>(path);
                 Repository.AddCollection(entities);
-                LoadConnectedData();
+                RefreshList();
             }
             catch (Exception)
             {

@@ -1,4 +1,4 @@
-﻿<Page x:Class="AcademicPerformanceUI.Views.TestResultView"
+﻿<Page x:Class="AcademicPerformanceUI.Views.TicketView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,8 +10,8 @@
       Title="TicketView">
 
     <Page.DataContext>
-        <viewModels:TestResultViewModel>
-        </viewModels:TestResultViewModel>
+        <viewModels:TicketViewModel>
+        </viewModels:TicketViewModel>
     </Page.DataContext>
     <Grid>
         <ListBox Margin="1,0,401,0" SelectedItem="{Binding Path=SelectedEntity, Mode=TwoWay}" ItemsSource="{Binding Entities}">
@@ -20,23 +20,31 @@
                     <StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock FontSize="15" Text="{Binding Id, StringFormat='Id: {0}'}"/>
-                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding Mark, StringFormat='Mark: {0}'}"/>
+                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding ArrivalDate, StringFormat='ArrivalDate: {0}'}"/>
+                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding ArrivalStation, StringFormat='ArrivalStation: {0}'}"/>
+                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding DepartureTime, StringFormat='DepartureTime: {0}'}"/>
+                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding DepartureStation, StringFormat='DepartureStation: {0}'}"/>
                             <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding CartId, StringFormat='Test id: {0}'}"/>
-                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding PassangerId, StringFormat='Student id: {0}'}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Orientation="Vertical" Margin="404,0,0,10">
-            <Label Margin="10,10,10,0" Content="Input mark:"></Label>
-            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.Mark}"/>
-            <Label Margin="10,0,10,0" Content="Input student id:"></Label>
+            <Label Margin="10,10,10,0" Content="Input ArrivalDate:"></Label>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.ArrivalDate}"/>
+            <Label Margin="10,10,10,0" Content="Input ArrivalStation:"></Label>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.ArrivalStation}"/>
+            <Label Margin="10,10,10,0" Content="Input DepartureStation:"></Label>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.DepartureStation}"/>
+            <Label Margin="10,10,10,0" Content="Input DepartureTime:"></Label>
+            <TextBox Margin="10,0,10,0" Height="23" Text="{Binding SelectedEntity.DepartureTime}"/>
+            <Label Margin="10,0,10,0" Content="Input passanger id:"></Label>
             <ComboBox Margin="10,0,10,0" Height="23" SelectedItem="{Binding SelectedEntity.PassangerId}"
-                      ItemsSource="{Binding StudentIds}"/>
-            <Label Margin="10,0,10,0" Content="Input test id:"></Label>
+                      ItemsSource="{Binding PassangerIds}"/>
+            <Label Margin="10,0,10,0" Content="Input cart id:"></Label>
             <ComboBox Margin="10,0,10,0" Height="23" SelectedItem="{Binding SelectedEntity.CartId}"
-                      ItemsSource="{Binding TestIds}"/>
+                      ItemsSource="{Binding CartIds}"/>
             
             <Button Margin="80,20,80,0" Content="Create" Click="Add_TestResult_OnClick"/>
             <Button Margin="80,20,80,0" Content="Delete" Click="Remove_TestResult_OnClick"/>

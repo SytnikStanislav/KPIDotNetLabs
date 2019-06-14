@@ -26,17 +26,11 @@ namespace DataAccess.InMemoryDb.Repository
 
         public Task<bool> DeleteAsync(Guid Id)
         {
-            InMemoryLists.Students = InMemoryLists.Students.Where(x => x.Id != Id)
-                               .ToList();
             InMemoryLists.Groups = InMemoryLists.Groups.Where(x => x.Id != Id)
                                .ToList();
             InMemoryLists.Subjects = InMemoryLists.Subjects.Where(x => x.Id != Id)
                                .ToList();
             InMemoryLists.Teachers = InMemoryLists.Teachers.Where(x => x.Id != Id)
-                               .ToList();
-            InMemoryLists.Tests = InMemoryLists.Tests.Where(x => x.Id != Id)
-                               .ToList();
-            InMemoryLists.SubjectInGroups = InMemoryLists.SubjectInGroups.Where(x => x.Id != Id)
                                .ToList();
             InMemoryLists.TestResults = InMemoryLists.TestResults.Where(x => x.Id != Id)
                                .ToList();

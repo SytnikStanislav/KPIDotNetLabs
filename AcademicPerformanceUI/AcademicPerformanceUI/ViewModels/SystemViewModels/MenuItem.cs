@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace AcademicPerformanceUI.ViewModels
 {
-    public class MenuItem : BaseViewModel<Student>
+    public class MenuItem : BaseViewModel<Cart>
     {
         private object _icon;
         private string _text;
@@ -46,7 +46,6 @@ namespace AcademicPerformanceUI.ViewModels
 
         public override void LoadConnectedData()
         {
-            throw new NotImplementedException();
         }
     }
 }

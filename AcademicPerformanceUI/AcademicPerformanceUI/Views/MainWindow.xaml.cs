@@ -19,7 +19,7 @@ namespace AcademicPerformanceUI.Views
                 Navigation.Navigation.Frame = new Frame() { NavigationUIVisibility = NavigationUIVisibility.Hidden };
                 Navigation.Navigation.Frame.Navigated += SplitViewFrame_OnNavigated;
 
-                this.Loaded += (sender, args) => Navigation.Navigation.Navigate(new Uri("Views/SubjectView.xaml", UriKind.RelativeOrAbsolute));
+                this.Loaded += (sender, args) => Navigation.Navigation.Navigate(new Uri("Views/TrainView.xaml", UriKind.RelativeOrAbsolute));
             }
             catch (Exception) { }
         }

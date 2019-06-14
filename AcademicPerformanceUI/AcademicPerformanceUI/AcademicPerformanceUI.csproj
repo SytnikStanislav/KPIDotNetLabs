@@ -73,25 +73,16 @@
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\StudentView.xaml.cs">
-      <DependentUpon>StudentView.xaml</DependentUpon>
+    <Compile Include="Views\TrainView.xaml.cs">
+      <DependentUpon>TrainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SubjectInGroup.xaml.cs">
-      <DependentUpon>SubjectInGroup.xaml</DependentUpon>
+    <Compile Include="Views\PassangerView.xaml.cs">
+      <DependentUpon>PassangerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SubjectView.xaml.cs">
-      <DependentUpon>SubjectView.xaml</DependentUpon>
+    <Compile Include="Views\TicketView.xaml.cs">
+      <DependentUpon>TicketView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TeacherView.xaml.cs">
-      <DependentUpon>TeacherView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TestResultView.xaml.cs">
-      <DependentUpon>TestResultView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TestView.xaml.cs">
-      <DependentUpon>TestView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\GroupView.xaml">
+    <Page Include="Views\CartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,17 +97,14 @@
     <Compile Include="Navigation.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\SystemViewModels\DelegateCommand.cs" />
-    <Compile Include="ViewModels\GroupViewModel.cs" />
+    <Compile Include="ViewModels\CartViewModel.cs" />
     <Compile Include="ViewModels\SystemViewModels\MenuItem.cs" />
     <Compile Include="ViewModels\SystemViewModels\MenuViewModel.cs" />
-    <Compile Include="ViewModels\StudentViewModel.cs" />
-    <Compile Include="ViewModels\SubjectInGroupViewModel.cs" />
-    <Compile Include="ViewModels\SubjectViewModel.cs" />
-    <Compile Include="ViewModels\TeacherViewModel.cs" />
-    <Compile Include="ViewModels\TestResultViewModel.cs" />
-    <Compile Include="ViewModels\TestViewModel.cs" />
-    <Compile Include="Views\GroupView.xaml.cs">
-      <DependentUpon>GroupView.xaml</DependentUpon>
+    <Compile Include="ViewModels\TrainViewModel.cs" />
+    <Compile Include="ViewModels\PassangerViewModel.cs" />
+    <Compile Include="ViewModels\TicketViewModel.cs" />
+    <Compile Include="Views\CartView.xaml.cs">
+      <DependentUpon>CartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -126,27 +114,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\StudentView.xaml">
+    <Page Include="Views\TrainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SubjectInGroup.xaml">
+    <Page Include="Views\PassangerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SubjectView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TeacherView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TestResultView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TestView.xaml">
+    <Page Include="Views\TicketView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
