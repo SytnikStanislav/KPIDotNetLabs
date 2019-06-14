@@ -10,9 +10,9 @@ namespace WebFormsClient
     public partial class SubjectInGroupCreatePage : System.Web.UI.Page
     {
         private Guid _id;
-        private WebClientCrudService<SubjectInGroupDto> webClientSubjectInGroup = new WebClientCrudService<SubjectInGroupDto>("SubjectInGroupService.svc");
-        private WebClientCrudService<SubjectDto> webClientSubject = new WebClientCrudService<SubjectDto>("SubjectService.svc");
-        private WebClientCrudService<GroupDto> webClientGroup = new WebClientCrudService<GroupDto>("GroupService.svc");
+        private WebClientCrudService<SubjectInGroupDto> webClientSubjectInGroup = new WebClientCrudService<SubjectInGroupDto>("TrainService.svc");
+        private WebClientCrudService<SubjectDto> webClientSubject = new WebClientCrudService<SubjectDto>("TicketService.svc");
+        private WebClientCrudService<GroupDto> webClientGroup = new WebClientCrudService<GroupDto>("CartService.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             var id = Request.QueryString["ID"];

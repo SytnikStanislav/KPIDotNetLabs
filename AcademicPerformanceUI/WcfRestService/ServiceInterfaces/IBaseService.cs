@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using WcfRestService.DTOModels;
+using DataAccess.Interfaces;
 
 namespace WcfRestService
 {
     [ServiceContract]
-    public interface IBaseService<TEntity> where TEntity: IBaseDto
+    public interface IBaseService<TEntity> where TEntity: IEntity
     {
         [OperationContract]
         [WebInvoke(

@@ -31,6 +31,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -39,6 +40,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -61,50 +63,28 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Services\GroupService.svc" />
-    <Content Include="Services\StudentService.svc" />
-    <Content Include="Services\SubjectInGroupService.svc" />
-    <Content Include="Services\SubjectService.svc" />
-    <Content Include="Services\TeacherService.svc" />
-    <Content Include="Services\TestResultService.svc" />
-    <Content Include="Services\TestService.svc" />
+    <Content Include="Services\CartService.svc" />
+    <Content Include="Services\PassangerService.svc" />
+    <Content Include="Services\TrainService.svc" />
+    <Content Include="Services\TicketService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOModels\FinalTestType.cs" />
-    <Compile Include="DTOModels\GroupDto.cs" />
-    <Compile Include="DTOModels\IBaseDto.cs" />
-    <Compile Include="DTOModels\StudentDto.cs" />
-    <Compile Include="DTOModels\SubjectDto.cs" />
-    <Compile Include="DTOModels\SubjectInGroupDto.cs" />
-    <Compile Include="DTOModels\TeacherDto.cs" />
-    <Compile Include="DTOModels\TestDto.cs" />
-    <Compile Include="DTOModels\TestResultDto.cs" />
     <Compile Include="ServiceInterfaces\IServiceInterfaces.cs" />
     <Compile Include="Services\BaseService.cs" />
-    <Compile Include="Services\GroupService.svc.cs">
-      <DependentUpon>GroupService.svc</DependentUpon>
+    <Compile Include="Services\CartService.svc.cs">
+      <DependentUpon>CartService.svc</DependentUpon>
     </Compile>
     <Compile Include="ServiceInterfaces\IBaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Mapper.cs" />
-    <Compile Include="Services\StudentService.svc.cs">
-      <DependentUpon>StudentService.svc</DependentUpon>
+    <Compile Include="Services\PassangerService.svc.cs">
+      <DependentUpon>PassangerService.svc</DependentUpon>
     </Compile>
-    <Compile Include="Services\SubjectInGroupService.svc.cs">
-      <DependentUpon>SubjectInGroupService.svc</DependentUpon>
+    <Compile Include="Services\TrainService.svc.cs">
+      <DependentUpon>TrainService.svc</DependentUpon>
     </Compile>
-    <Compile Include="Services\SubjectService.svc.cs">
-      <DependentUpon>SubjectService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Services\TeacherService.svc.cs">
-      <DependentUpon>TeacherService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Services\TestResultService.svc.cs">
-      <DependentUpon>TestResultService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Services\TestService.svc.cs">
-      <DependentUpon>TestService.svc</DependentUpon>
+    <Compile Include="Services\TicketService.svc.cs">
+      <DependentUpon>TicketService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

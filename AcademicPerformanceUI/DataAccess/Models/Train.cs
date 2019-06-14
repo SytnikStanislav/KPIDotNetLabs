@@ -6,7 +6,7 @@ using DataAccess.Interfaces;
 namespace DataAccess.Models
 {
     [Table(Name = "Train")]
-    [Serializable]
+    [DataContract]
     public class Train : IEntity
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = false)]

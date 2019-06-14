@@ -1,41 +1,25 @@
 ﻿using System.ServiceModel;
-using System.ServiceModel.Web;
-using WcfRestService.DTOModels;
+using DataAccess.Models;
 
 namespace WcfRestService.ServiceInterfaces
 {
     [ServiceContract]
-    public interface IGroupService : IBaseService<GroupDto>
+    public interface ICartService : IBaseService<Cart>
     {
     }
 
     [ServiceContract]
-    public interface IStudentService : IBaseService<StudentDto>
+    public interface IPassangerService : IBaseService<Passanger>
     {
     }
 
     [ServiceContract]
-    public interface ISubjectService : IBaseService<SubjectDto>
+    public interface ITicketService : IBaseService<Ticket>
     {
     }
 
     [ServiceContract]
-    public interface ISubjectInGroupService : IBaseService<SubjectInGroupDto>
-    {
-    }
-
-    [ServiceContract]
-    public interface ITeacherService : IBaseService<TeacherDto>
-    {
-    }
-
-    [ServiceContract]
-    public interface ITestService : IBaseService<TestDto>
-    {
-    }
-
-    [ServiceContract]
-    public interface ITestResultService : IBaseService<TestResultDto>
+    public interface ITrainService : IBaseService<Train>
     {
     }
 }

@@ -7,7 +7,7 @@ namespace WebFormsClient
 {
     public partial class GroupsPage : System.Web.UI.Page
     {
-        private WebClientCrudService<GroupDto> webClient = new WebClientCrudService<GroupDto>("GroupService.svc");
+        private WebClientCrudService<GroupDto> webClient = new WebClientCrudService<GroupDto>("CartService.svc");
 
         protected void Page_Load(object sender, EventArgs e)
         {

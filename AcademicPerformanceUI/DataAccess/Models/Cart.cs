@@ -5,7 +5,7 @@ using System.Data.Linq.Mapping;
 
 namespace DataAccess.Models
 {
-    [Serializable]
+    [DataContract]
     [Table(Name = "Cart")]
     public class Cart : IEntity
     {

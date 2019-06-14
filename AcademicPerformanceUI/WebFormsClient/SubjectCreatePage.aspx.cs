@@ -10,7 +10,7 @@ namespace WebFormsClient
     public partial class SubjectCreatePage : System.Web.UI.Page
     {
         private Guid _id;
-        private WebClientCrudService<SubjectDto> client = new WebClientCrudService<SubjectDto>("SubjectService.svc");
+        private WebClientCrudService<SubjectDto> client = new WebClientCrudService<SubjectDto>("TicketService.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             var id = Request.QueryString["Id"];

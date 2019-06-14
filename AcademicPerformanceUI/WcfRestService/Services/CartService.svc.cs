@@ -1,15 +1,19 @@
 ﻿using DataAccess.Interfaces;
 using DataAccess.Models;
 using System.ServiceModel;
-using WcfRestService.DTOModels;
 using WcfRestService.ServiceInterfaces;
 
 namespace WcfRestService
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
-    public class GroupService : BaseService<GroupDto, Cart>, IGroupService 
+    public class CartService : BaseService<Cart>, ICartService 
     {
-        public GroupService(IRepository<Cart> repository):base(repository)
+        public CartService(IRepository<Cart> repository):base(repository)
+        {
+                
+        }
+
+        public CartService()
         {
                 
         }

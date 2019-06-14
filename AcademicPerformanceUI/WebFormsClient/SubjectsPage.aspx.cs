@@ -8,7 +8,7 @@ namespace WebFormsClient
 {
     public partial class SubjectsPage : System.Web.UI.Page
     {
-        private WebClientCrudService<SubjectDto> client = new WebClientCrudService<SubjectDto>("SubjectService.svc");
+        private WebClientCrudService<SubjectDto> client = new WebClientCrudService<SubjectDto>("TicketService.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

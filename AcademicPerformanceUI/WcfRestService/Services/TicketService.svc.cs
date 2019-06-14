@@ -1,12 +1,11 @@
 ﻿using DataAccess.Models;
 using System.ServiceModel;
-using WcfRestService.DTOModels;
 using WcfRestService.ServiceInterfaces;
 
 namespace WcfRestService.Services
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
-    public class TestResultService :BaseService<TestResultDto,Ticket>, ITestResultService
+    public class TicketService :BaseService<Ticket>, ITicketService
     {
     }
 }
