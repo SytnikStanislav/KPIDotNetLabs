@@ -11,6 +11,12 @@ namespace WebFormsClient
     public class WebClientCrudService<TEntity> where TEntity:IEntity
     {
         private string serviceName;
+        // Set the DateFormatHandling wherever you are configuring JSON.Net.
+        // This is usually globally configured per application.
+        private JsonSerializerSettings settings = new JsonSerializerSettings
+        {
+            DateFormatHandling = DateFormatHandling.MicrosoftDateFormat
+        };
 
         public WebClientCrudService(string ServiceName)
         {
@@ -49,7 +55,7 @@ namespace WebFormsClient
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(url);
             req.Method = "POST";
 
-            var data = JsonConvert.SerializeObject(subjectDto);
+            var data = JsonConvert.SerializeObject(subjectDto, settings);
             byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
 
             req.ContentType = "application/json";
@@ -78,7 +84,7 @@ namespace WebFormsClient
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(url);
             req.Method = "PUT";
 
-            var data = JsonConvert.SerializeObject(subjectDto);
+            var data = JsonConvert.SerializeObject(subjectDto, settings);
             byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
             req.ContentType = "application/json";
             req.ContentLength = byteArray.Length;

@@ -160,7 +160,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="SubjectCreatePage.aspx" />
+    <Content Include="TicketCreatePage.aspx" />
     <Content Include="SubjectInGroupCreatePage.aspx" />
     <Content Include="SubjectInGroupsPage.aspx" />
     <Content Include="TicketsPage.aspx" />
@@ -205,12 +205,12 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="SubjectCreatePage.aspx.cs">
-      <DependentUpon>SubjectCreatePage.aspx</DependentUpon>
+    <Compile Include="TicketCreatePage.aspx.cs">
+      <DependentUpon>TicketCreatePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SubjectCreatePage.aspx.designer.cs">
-      <DependentUpon>SubjectCreatePage.aspx</DependentUpon>
+    <Compile Include="TicketCreatePage.aspx.designer.cs">
+      <DependentUpon>TicketCreatePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="SubjectInGroupCreatePage.aspx.cs">
       <DependentUpon>SubjectInGroupCreatePage.aspx</DependentUpon>

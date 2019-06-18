@@ -33,13 +33,13 @@ namespace WebFormsClient
                     break;
 
                 case "Update":
-                    Response.Redirect("subjectCreatePage?ID=" + e.CommandArgument);
+                    Response.Redirect("ticketCreatePage?ID=" + e.CommandArgument);
                     break;
             }
         }
         protected void OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("subjectCreatePage");
+            Response.Redirect("ticketCreatePage");
         }
     }
 }

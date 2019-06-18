@@ -10,7 +10,7 @@
 namespace WebFormsClient {
     
     
-    public partial class SubjectCreatePage {
+    public partial class TicketCreatePage {
         
         /// <summary>
         /// Label control.
