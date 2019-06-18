@@ -22,22 +22,22 @@ namespace WebFormsClient {
         protected global::System.Web.UI.WebControls.Label Label;
         
         /// <summary>
-        /// dropdownSubject control.
+        /// firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdownSubject;
+        protected global::System.Web.UI.WebControls.TextBox firstname;
         
         /// <summary>
-        /// dropdownGroup control.
+        /// lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdownGroup;
+        protected global::System.Web.UI.WebControls.TextBox lastname;
         
         /// <summary>
         /// btnCreate control.

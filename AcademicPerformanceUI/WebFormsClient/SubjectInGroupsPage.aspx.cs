@@ -1,14 +1,14 @@
-﻿using System;
+﻿using DataAccess.Models;
+using System;
 using System.Threading;
 using System.Transactions;
 using System.Web.UI.WebControls;
-using WcfRestService.DTOModels;
 
 namespace WebFormsClient
 {
     public partial class SubjectInGroupsPage : System.Web.UI.Page
     {
-        private WebClientCrudService<SubjectInGroupDto> webClient = new WebClientCrudService<SubjectInGroupDto>("TrainService.svc");
+        private WebClientCrudService<Passanger> webClient = new WebClientCrudService<Passanger>("PassangerService.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

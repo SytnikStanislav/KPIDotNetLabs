@@ -1,18 +1,16 @@
-﻿using System;
+﻿using DataAccess.Models;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Transactions;
 using System.Web.UI.WebControls;
-using WcfRestService.DTOModels;
 
 namespace WebFormsClient
 {
     public partial class SubjectInGroupCreatePage : System.Web.UI.Page
     {
         private Guid _id;
-        private WebClientCrudService<SubjectInGroupDto> webClientSubjectInGroup = new WebClientCrudService<SubjectInGroupDto>("TrainService.svc");
-        private WebClientCrudService<SubjectDto> webClientSubject = new WebClientCrudService<SubjectDto>("TicketService.svc");
-        private WebClientCrudService<GroupDto> webClientGroup = new WebClientCrudService<GroupDto>("CartService.svc");
+        private WebClientCrudService<Passanger> client = new WebClientCrudService<Passanger>("PassangerService.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             var id = Request.QueryString["ID"];
@@ -26,35 +24,31 @@ namespace WebFormsClient
             {
                 if (id != null)
                 {
-                    var _loadedRoute = webClientSubjectInGroup.GetEntities().Where(x => x.Id == _id).FirstOrDefault();
-                    dropdownGroup.SelectedValue = _loadedRoute.GroupId.ToString();
-                    dropdownSubject.SelectedValue = _loadedRoute.SubjectId.ToString();
+                    var _loadedRoute = client.GetEntities().Where(x => x.Id == _id).FirstOrDefault();
+                    firstname.Text = _loadedRoute.FirstName.ToString();
+                    lastname.Text = _loadedRoute.LastName.ToString();
 
                     btnCreate.Visible = false;
-                    Label.Text = "Update subject in group";
+                    Label.Text = "Update passanger";
                 }
                 else
                 {
                     btnUpdate.Visible = false;
-                    Label.Text = "Create new subject in group";
+                    Label.Text = "Create new passanger";
                 }
-
-                dropdownGroup.DataSource = webClientGroup.GetEntities().Select(item => item.Id);
-                dropdownSubject.DataSource = webClientSubject.GetEntities().Select(item => item.Id);
-                DataBind();
             }
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            var route = new SubjectInGroupDto();
+            var route = new Passanger();
             route.Id = Guid.NewGuid();
-            route.GroupId = new Guid(dropdownGroup.SelectedValue);
-            route.SubjectId = new Guid(dropdownSubject.SelectedValue);
+            route.FirstName = firstname.Text;
+            route.LastName = lastname.Text;
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
-                webClientSubjectInGroup.CreateEntity(route);
+                client.CreateEntity(route);
                 scope.Complete();
             }
 
@@ -64,14 +58,14 @@ namespace WebFormsClient
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            var route = webClientSubjectInGroup.GetEntities().Where(x => x.Id == _id).FirstOrDefault();
+            var route = client.GetEntities().Where(x => x.Id == _id).FirstOrDefault();
 
-            route.GroupId = new Guid(dropdownGroup.SelectedValue);
-            route.SubjectId = new Guid(dropdownSubject.SelectedValue);
+            route.FirstName = firstname.Text;
+            route.LastName = lastname.Text;
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
-                webClientSubjectInGroup.UpdateEntity(route);
+                client.UpdateEntity(route);
                 scope.Complete();
             }
 

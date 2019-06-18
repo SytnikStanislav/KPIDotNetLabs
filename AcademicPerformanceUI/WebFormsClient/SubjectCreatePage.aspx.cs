@@ -1,16 +1,18 @@
-﻿using System;
+﻿using DataAccess.Models;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Transactions;
 using System.Web.UI.WebControls;
-using WcfRestService.DTOModels;
 
 namespace WebFormsClient
 {
     public partial class SubjectCreatePage : System.Web.UI.Page
     {
         private Guid _id;
-        private WebClientCrudService<SubjectDto> client = new WebClientCrudService<SubjectDto>("TicketService.svc");
+        private WebClientCrudService<Ticket> client = new WebClientCrudService<Ticket>("TicketService.svc");
+        private WebClientCrudService<Cart> clientCart = new WebClientCrudService<Cart>("CartService.svc");
+        private WebClientCrudService<Passanger> clientPassanger = new WebClientCrudService<Passanger>("PassangerService.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             var id = Request.QueryString["Id"];
@@ -24,33 +26,42 @@ namespace WebFormsClient
                 {
                     var _loadedSubject = client.GetEntities().Where(i => i.Id == Guid.Parse(id)).FirstOrDefault();
 
-                    subjectName.Text = _loadedSubject.Name;
-                    subjectHours.Text = _loadedSubject.Hours.ToString();
-                    subjectTestType.Text = _loadedSubject.FinalTestType.ToString();
+                    arrivalStation.Text = _loadedSubject.ArrivalStation;
+                    arrivalDate.Text = _loadedSubject.ArrivalDate.ToString();
+                    departureStation.Text = _loadedSubject.DepartureStation;
+                    departureDate.Text = _loadedSubject.DepartureTime.ToString();
+                    dropdownCart.SelectedValue = _loadedSubject.CartId.ToString();
+                    dropdownPassanger.SelectedValue = _loadedSubject.PassangerId.ToString();
 
                     btnCreate.Visible = false;
-                    Label.Text = "Update subject";
+                    Label.Text = "Update ticket";
                 }
                 else
                 {
                     btnUpdate.Visible = false;
-                    Label.Text = "Create new subject";
+                    Label.Text = "Create new ticket";
                 }
             }
+            dropdownCart.DataSource = clientCart.GetEntities().Select(item => item.Id);
+            dropdownPassanger.DataSource = clientPassanger.GetEntities().Select(item => item.Id);
+            DataBind();
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            SubjectDto subject = new SubjectDto();
+            Ticket ticket = new Ticket();
 
-            subject.Name = subjectName.Text;
-            subject.Hours = int.Parse(subjectHours.Text);
-            Enum.TryParse(subjectTestType.Text, out FinalTestType rang);
-            subject.FinalTestType = rang;
+            ticket.ArrivalStation = arrivalStation.Text;
+            ticket.ArrivalDate = DateTime.Parse(arrivalDate.Text);
+            ticket.DepartureTime = DateTime.Parse(departureDate.Text);
+            ticket.DepartureStation = departureStation.Text;
+            ticket.CartId = Guid.Parse(dropdownCart.SelectedItem.Text);
+            ticket.PassangerId = Guid.Parse(dropdownPassanger.SelectedItem.Text);
+            ticket.Id = Guid.NewGuid();
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
-                client.CreateEntity(subject);
+                client.CreateEntity(ticket);
 
                 scope.Complete();
             }
@@ -62,15 +73,17 @@ namespace WebFormsClient
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            var subject = client.GetEntities().Where(sub => sub.Id == _id).FirstOrDefault();
-            subject.Name = subjectName.Text;
-            subject.Hours = int.Parse(subjectHours.Text);
-            Enum.TryParse(subjectTestType.Text, out FinalTestType rang);
-            subject.FinalTestType = rang;
+            var ticket = client.GetEntities().Where(sub => sub.Id == _id).FirstOrDefault();
+            ticket.ArrivalStation = arrivalStation.Text;
+            ticket.ArrivalDate = DateTime.Parse(arrivalDate.Text);
+            ticket.DepartureTime = DateTime.Parse(departureDate.Text);
+            ticket.DepartureStation = departureStation.Text;
+            ticket.CartId = Guid.Parse(dropdownCart.SelectedItem.Text);
+            ticket.PassangerId = Guid.Parse(dropdownPassanger.SelectedItem.Text);
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
-                client.UpdateEntity(subject);
+                client.UpdateEntity(ticket);
                 scope.Complete();
             }
 

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading;
 using System.Transactions;
 using System.Web.UI.WebControls;
-using WcfRestService.DTOModels;
 using WebFormsMsMqClient.AcademicService;
 
 namespace WebFormsMsMqClient
@@ -15,7 +14,6 @@ namespace WebFormsMsMqClient
     {
         private readonly IRepository<Train> SubjectRepository = Singleton.UnitOfWork.TrainRepostitory;
         private readonly IRepository<Cart> GroupRepository = Singleton.UnitOfWork.CartRepository;
-        private readonly IRepository<SubjectInGroup> SubjectInGroupRepository = Singleton.UnitOfWork.SubjectInGroupRepository;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
         private Guid _id;
         protected void Page_Load(object sender, EventArgs e)

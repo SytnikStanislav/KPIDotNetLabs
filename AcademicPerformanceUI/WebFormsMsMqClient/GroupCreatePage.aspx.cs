@@ -51,7 +51,7 @@ namespace WebFormsMsMqClient
             subject.Id = Guid.NewGuid();
             subject.Name = groupName.Text;
             subject.MaxCapacity = int.Parse(groupMaxStudents.Text);
-            subject.TrainId = int.Parse(groupStudyYear.Text);
+            subject.TrainId = Guid.Parse(groupStudyYear.Text);
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
@@ -69,7 +69,7 @@ namespace WebFormsMsMqClient
             var group = Repository.GetAllEntitiesAsync().Result.Where(sub => sub.Id == _id).FirstOrDefault();
             group.Name = groupName.Text;
             group.MaxCapacity = int.Parse(groupMaxStudents.Text);
-            group.TrainId = int.Parse(groupStudyYear.Text);
+            group.TrainId = Guid.Parse(groupStudyYear.Text);
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {
