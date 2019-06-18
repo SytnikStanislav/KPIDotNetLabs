@@ -1,22 +1,22 @@
-﻿using System;
-using System.Web.UI.WebControls;
-using System.Transactions;
-using System.Threading;
+﻿using DataAccess.Interfaces;
 using DataAccess.Models;
-using DataAccess.Interfaces;
+using System;
+using System.Threading;
+using System.Transactions;
+using System.Web.UI.WebControls;
 using WebFormsMsMqClient.AcademicService;
 
 namespace WebFormsMsMqClient
 {
-    public partial class SubjectsPage : System.Web.UI.Page
+    public partial class PassangersPage : System.Web.UI.Page
     {
-        private readonly IRepository<Train> Repository = Singleton.UnitOfWork.TrainRepostitory;
+        private readonly IRepository<SubjectInGroup> SubjectInGroupRepository = Singleton.UnitOfWork.SubjectInGroupRepository;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Repeater.DataSource = Repository.GetAllEntitiesAsync().Result;
+                Repeater.DataSource = SubjectInGroupRepository.GetAllEntitiesAsync().Result;
                 Repeater.DataBind();
             }
         }
@@ -28,21 +28,22 @@ namespace WebFormsMsMqClient
                 case "Delete":
                     using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
                     {
-                        serviceClient.RemoveSubject(e.CommandArgument.ToString());
+                        serviceClient.RemoveSiG(e.CommandArgument.ToString());
+
                         scope.Complete();
                     }
-                    Thread.Sleep(3000);
-                    Response.Redirect("subjectspage");
-                    break;
 
+                    Thread.Sleep(3000);
+                    Response.Redirect("subjectingroupspage");
+                    break;
                 case "Update":
-                    Response.Redirect("subjectCreatePage?ID=" + e.CommandArgument);
+                    Response.Redirect("subjectingroupCreatePage?ID=" + e.CommandArgument);
                     break;
             }
         }
         protected void OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("subjectCreatePage");
+            Response.Redirect("subjectingroupCreatePage");
         }
     }
 }

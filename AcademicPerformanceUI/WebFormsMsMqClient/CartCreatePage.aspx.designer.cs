@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebFormsMsMqClient {
+namespace WebFormsClient {
     
     
-    public partial class GroupCreatePage {
+    public partial class CartCreatePage {
         
         /// <summary>
         /// Label control.

@@ -1,22 +1,22 @@
 ﻿using DataAccess.Interfaces;
 using DataAccess.Models;
 using System;
-using System.Threading;
 using System.Transactions;
 using System.Web.UI.WebControls;
 using WebFormsMsMqClient.AcademicService;
 
 namespace WebFormsMsMqClient
 {
-    public partial class SubjectInGroupsPage : System.Web.UI.Page
+    public partial class CartsPage : System.Web.UI.Page
     {
-        private readonly IRepository<SubjectInGroup> SubjectInGroupRepository = Singleton.UnitOfWork.SubjectInGroupRepository;
+        private readonly IRepository<Cart> Repository = Singleton.UnitOfWork.CartRepository;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Repeater.DataSource = SubjectInGroupRepository.GetAllEntitiesAsync().Result;
+                Repeater.DataSource = Repository.GetAllEntitiesAsync().Result;
                 Repeater.DataBind();
             }
         }
@@ -28,22 +28,21 @@ namespace WebFormsMsMqClient
                 case "Delete":
                     using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
                     {
-                        serviceClient.RemoveSiG(e.CommandArgument.ToString());
+                        serviceClient.RemoveGroup(e.CommandArgument.ToString());
 
                         scope.Complete();
                     }
 
-                    Thread.Sleep(3000);
-                    Response.Redirect("subjectingroupspage");
+                    Response.Redirect("groupspage");
                     break;
                 case "Update":
-                    Response.Redirect("subjectingroupCreatePage?ID=" + e.CommandArgument);
+                    Response.Redirect("groupCreatePage?ID=" + e.CommandArgument);
                     break;
             }
         }
         protected void OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("subjectingroupCreatePage");
+            Response.Redirect("groupCreatePage");
         }
-    }
+}
 }

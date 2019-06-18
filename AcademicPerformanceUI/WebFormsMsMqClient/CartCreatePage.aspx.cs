@@ -10,7 +10,7 @@ using WebFormsMsMqClient.AcademicService;
 
 namespace WebFormsMsMqClient
 {
-    public partial class GroupCreatePage : System.Web.UI.Page
+    public partial class CartCreatePage : System.Web.UI.Page
     {
         private Guid _id;
         private readonly IRepository<Cart> Repository = Singleton.UnitOfWork.CartRepository;

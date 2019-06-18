@@ -10,7 +10,7 @@ using WebFormsMsMqClient.AcademicService;
 
 namespace WebFormsMsMqClient
 {
-    public partial class SubjectInGroupCreatePage : System.Web.UI.Page
+    public partial class PassangerCreatePage : System.Web.UI.Page
     {
         private readonly IRepository<Train> SubjectRepository = Singleton.UnitOfWork.TrainRepostitory;
         private readonly IRepository<Cart> GroupRepository = Singleton.UnitOfWork.CartRepository;

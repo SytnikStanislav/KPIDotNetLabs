@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebFormsMsMqClient {
+namespace WebFormsClient {
     
     
-    public partial class SubjectCreatePage {
+    public partial class TicketCreatePage {
         
         /// <summary>
         /// Label control.
@@ -22,31 +22,58 @@ namespace WebFormsMsMqClient {
         protected global::System.Web.UI.WebControls.Label Label;
         
         /// <summary>
-        /// subjectName control.
+        /// arrivalStation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox subjectName;
+        protected global::System.Web.UI.WebControls.TextBox arrivalStation;
         
         /// <summary>
-        /// subjectTestType control.
+        /// departureStation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox subjectTestType;
+        protected global::System.Web.UI.WebControls.TextBox departureStation;
         
         /// <summary>
-        /// subjectHours control.
+        /// arrivalDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox subjectHours;
+        protected global::System.Web.UI.WebControls.TextBox arrivalDate;
+        
+        /// <summary>
+        /// departureDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox departureDate;
+        
+        /// <summary>
+        /// dropdownCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropdownCart;
+        
+        /// <summary>
+        /// dropdownPassanger control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropdownPassanger;
         
         /// <summary>
         /// btnCreate control.

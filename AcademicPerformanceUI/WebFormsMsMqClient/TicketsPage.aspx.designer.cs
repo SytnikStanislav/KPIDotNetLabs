@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebFormsMsMqClient {
+namespace WebFormsClient {
     
     
-    public partial class SubjectsPage {
+    public partial class TicketsPage {
         
         /// <summary>
         /// Repeater control.

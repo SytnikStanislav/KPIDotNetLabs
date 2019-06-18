@@ -1,17 +1,17 @@
-﻿using DataAccess.Interfaces;
-using DataAccess.Models;
-using System;
-using System.Transactions;
+﻿using System;
 using System.Web.UI.WebControls;
+using System.Transactions;
+using System.Threading;
+using DataAccess.Models;
+using DataAccess.Interfaces;
 using WebFormsMsMqClient.AcademicService;
 
 namespace WebFormsMsMqClient
 {
-    public partial class GroupsPage : System.Web.UI.Page
+    public partial class TicketsPage : System.Web.UI.Page
     {
-        private readonly IRepository<Cart> Repository = Singleton.UnitOfWork.CartRepository;
+        private readonly IRepository<Train> Repository = Singleton.UnitOfWork.TrainRepostitory;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -28,21 +28,21 @@ namespace WebFormsMsMqClient
                 case "Delete":
                     using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
                     {
-                        serviceClient.RemoveGroup(e.CommandArgument.ToString());
-
+                        serviceClient.RemoveSubject(e.CommandArgument.ToString());
                         scope.Complete();
                     }
-
-                    Response.Redirect("groupspage");
+                    Thread.Sleep(3000);
+                    Response.Redirect("subjectspage");
                     break;
+
                 case "Update":
-                    Response.Redirect("groupCreatePage?ID=" + e.CommandArgument);
+                    Response.Redirect("subjectCreatePage?ID=" + e.CommandArgument);
                     break;
             }
         }
         protected void OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("groupCreatePage");
+            Response.Redirect("subjectCreatePage");
         }
-}
+    }
 }

@@ -10,7 +10,7 @@ using WebFormsMsMqClient.AcademicService;
 
 namespace WebFormsMsMqClient
 {
-    public partial class SubjectCreatePage : System.Web.UI.Page
+    public partial class TicketCreatePage : System.Web.UI.Page
     {
         private readonly IRepository<Train> Repository = Singleton.UnitOfWork.TrainRepostitory;
         private readonly AcademicServiceClient serviceClient = new AcademicServiceClient();
