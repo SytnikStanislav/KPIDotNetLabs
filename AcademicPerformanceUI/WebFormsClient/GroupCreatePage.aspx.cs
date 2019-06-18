@@ -45,7 +45,7 @@ namespace WebFormsClient
             Cart subject = new Cart();
             subject.Name = groupName.Text;
             subject.MaxCapacity = int.Parse(groupMaxStudents.Text);
-            subject.TrainId = Guid.Parse(groupStudyYear.Text);
+            subject.TrainId = Guid.NewGuid();
 
             using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required))
             {

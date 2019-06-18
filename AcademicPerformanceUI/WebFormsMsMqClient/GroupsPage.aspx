@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GroupsPage.aspx.cs" Inherits="WebFormsMsMqClient.GroupsPage" MasterPageFile="~/Site.Master"%>
-<%@ Import Namespace="WcfRestService.DTOModels" %>
+<%@ Import Namespace="DataAccess.Models" %>
 
 <asp:Content ID="GroupsPage" ContentPlaceHolderID="MainContent" runat="server">
     <div>

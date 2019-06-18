@@ -163,7 +163,7 @@
     <Content Include="SubjectCreatePage.aspx" />
     <Content Include="SubjectInGroupCreatePage.aspx" />
     <Content Include="SubjectInGroupsPage.aspx" />
-    <Content Include="SubjectsPage.aspx" />
+    <Content Include="TicketsPage.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -226,12 +226,12 @@
     <Compile Include="SubjectInGroupsPage.aspx.designer.cs">
       <DependentUpon>SubjectInGroupsPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SubjectsPage.aspx.cs">
-      <DependentUpon>SubjectsPage.aspx</DependentUpon>
+    <Compile Include="TicketsPage.aspx.cs">
+      <DependentUpon>TicketsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SubjectsPage.aspx.designer.cs">
-      <DependentUpon>SubjectsPage.aspx</DependentUpon>
+    <Compile Include="TicketsPage.aspx.designer.cs">
+      <DependentUpon>TicketsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

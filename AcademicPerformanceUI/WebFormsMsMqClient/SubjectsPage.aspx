@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SubjectsPage.aspx.cs" Inherits="WebFormsMsMqClient.SubjectsPage" MasterPageFile="~/Site.Master"%>
-<%@ Import Namespace="WcfRestService.DTOModels" %>
+<%@ Import Namespace="DataAccess.Models" %>
 
 <asp:Content ID="SubjectsPage" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h1>Subjects list </h1>
+        <h1>Train list </h1>
         <asp:Button runat="server" class='btn btn-warning' OnClick="OnClick" Text="Create" role='button'></asp:Button>
         <hr>
         <asp:Repeater ID="Repeater" runat="server" onitemcommand="Repeater1_ItemCommand">
@@ -11,7 +11,6 @@
                 <div>
                     <span>Id: <%#Eval("Id") %></span>
                     <h5>Name: <%#Eval("Name") %></h5>
-                    <h6>FinalTestType:  <%#Eval("FinalTestType") %></h6>
                     <h6>AmountOfCarts:  <%#Eval("AmountOfCarts") %></h6>
                 </div>
                 <asp:Button ID="test" runat="server" CommandName="Update" CommandArgument='<%# Eval("Id") %>' class='btn btn-info' Text="Update"></asp:Button>

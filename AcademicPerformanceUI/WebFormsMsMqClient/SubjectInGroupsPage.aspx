@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SubjectInGroupsPage.aspx.cs" MasterPageFile="~/Site.Master"  Inherits="WebFormsMsMqClient.SubjectInGroupsPage" %>
+<%@ Import Namespace="DataAccess.Models" %>
 
 <asp:Content ID="ShiftPage" ContentPlaceHolderID="MainContent" runat="server">
     <div>

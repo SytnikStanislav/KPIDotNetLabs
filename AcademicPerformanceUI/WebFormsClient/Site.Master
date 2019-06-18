@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Academic performance</title>
+    <title>vokzal</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -50,9 +50,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="subjectsPage">Train</a></li>
-                        <li><a runat="server" href="subjectInGroupsPage">TrainInGroups</a></li>
-                        <li><a runat="server" href="groupsPage">Groups</a></li>
+                        <li><a runat="server" href="ticketspage">Ticket</a></li>
+                        <li><a runat="server" href="subjectInGroupsPage">Passangers</a></li>
+                        <li><a runat="server" href="groupsPage">Carts</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SubjectsPage.aspx.cs" Inherits="WebFormsClient.SubjectsPage" MasterPageFile="~/Site.Master"%>
-<%@ Import Namespace="WcfRestService.DTOModels" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TicketsPage.aspx.cs" Inherits="WebFormsClient.TicketsPage" MasterPageFile="~/Site.Master"%>
+<%@ Import Namespace="DataAccess.Models" %>
 
 <asp:Content ID="SubjectsPage" ContentPlaceHolderID="MainContent" runat="server">
     <div>

@@ -6,7 +6,7 @@ using DataAccess.Models;
 
 namespace WebFormsClient
 {
-    public partial class SubjectsPage : System.Web.UI.Page
+    public partial class TicketsPage : System.Web.UI.Page
     {
         private WebClientCrudService<Ticket> client = new WebClientCrudService<Ticket>("TicketService.svc");
         protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace WebFormsClient
                         scope.Complete();
                     }
                     Thread.Sleep(3000);
-                    Response.Redirect("subjectspage");
+                    Response.Redirect("ticketspage");
                     break;
 
                 case "Update":

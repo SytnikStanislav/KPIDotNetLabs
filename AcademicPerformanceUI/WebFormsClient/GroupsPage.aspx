@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GroupsPage.aspx.cs" Inherits="WebFormsClient.GroupsPage" MasterPageFile="~/Site.Master"%>
-<%@ Import Namespace="WcfRestService.DTOModels" %>
+<%@ Import Namespace="DataAccess.Models" %>
 
 <asp:Content ID="GroupsPage" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h1>Groups list </h1>
+        <h1>Cart list </h1>
         <asp:Button runat="server" class='btn btn-warning' OnClick="OnClick" Text="Create" role='button'></asp:Button>
         <hr>
         <asp:Repeater ID="Repeater" runat="server" onitemcommand="Repeater1_ItemCommand">
