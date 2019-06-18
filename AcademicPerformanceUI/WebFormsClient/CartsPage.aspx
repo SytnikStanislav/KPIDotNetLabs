@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CartsPage.aspx.cs" Inherits="CartsPage" MasterPageFile="~/Site.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CartsPage.aspx.cs" Inherits="WebFormsClient.CartsPage" MasterPageFile="~/Site.Master"%>
 <%@ Import Namespace="DataAccess.Models" %>
 
 <asp:Content ID="GroupsPage" ContentPlaceHolderID="MainContent" runat="server">

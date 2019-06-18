@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PassangersPage.aspx.cs" MasterPageFile="~/Site.Master"  Inherits="PassangersPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PassangersPage.aspx.cs" MasterPageFile="~/Site.Master"  Inherits="WebFormsClient.PassangersPage" %>
 
 <asp:Content ID="ShiftPage" ContentPlaceHolderID="MainContent" runat="server">
     <div>
