@@ -6,7 +6,7 @@ using DataAccess.Models;
 
 namespace WebFormsClient
 {
-    public partial class GroupCreatePage : System.Web.UI.Page
+    public partial class CartCreatePage : System.Web.UI.Page
     {
         private Guid _id;
         private WebClientCrudService<Cart> webClient = new WebClientCrudService<Cart>("CartService.svc");
@@ -53,7 +53,7 @@ namespace WebFormsClient
                 scope.Complete();
             }
 
-            Response.Redirect("groupsPage");
+            Response.Redirect("cartsPage");
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace WebFormsClient
                 scope.Complete();
             }
 
-            Response.Redirect("groupsPage");
+            Response.Redirect("cartsPage");
         }
     }
 }

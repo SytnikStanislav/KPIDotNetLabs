@@ -10,7 +10,7 @@
 namespace WebFormsClient {
     
     
-    public partial class GroupCreatePage {
+    public partial class PassangerCreatePage {
         
         /// <summary>
         /// Label control.
@@ -22,31 +22,22 @@ namespace WebFormsClient {
         protected global::System.Web.UI.WebControls.Label Label;
         
         /// <summary>
-        /// groupName control.
+        /// firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox groupName;
+        protected global::System.Web.UI.WebControls.TextBox firstname;
         
         /// <summary>
-        /// groupMaxStudents control.
+        /// lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox groupMaxStudents;
-        
-        /// <summary>
-        /// groupStudyYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox groupStudyYear;
+        protected global::System.Web.UI.WebControls.TextBox lastname;
         
         /// <summary>
         /// btnCreate control.

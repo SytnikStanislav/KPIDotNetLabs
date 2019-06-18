@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebFormsClient
 {
-    public partial class SubjectInGroupCreatePage : System.Web.UI.Page
+    public partial class PassangerCreatePage : System.Web.UI.Page
     {
         private Guid _id;
         private WebClientCrudService<Passanger> client = new WebClientCrudService<Passanger>("PassangerService.svc");
@@ -53,7 +53,7 @@ namespace WebFormsClient
             }
 
             Thread.Sleep(3000);
-            Response.Redirect("SubjectInGroupsPage");
+            Response.Redirect("passangersPage");
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace WebFormsClient
                 scope.Complete();
             }
 
-            Response.Redirect("SubjectInGroupsPage");
+            Response.Redirect("passangersPage");
         }
     }
 }

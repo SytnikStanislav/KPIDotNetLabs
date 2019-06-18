@@ -10,7 +10,7 @@
 namespace WebFormsClient {
     
     
-    public partial class GroupsPage {
+    public partial class CartsPage {
         
         /// <summary>
         /// Repeater control.

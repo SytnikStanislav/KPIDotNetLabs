@@ -1,14 +1,14 @@
-﻿using DataAccess.Models;
-using System;
-using System.Threading;
+﻿using System;
 using System.Transactions;
 using System.Web.UI.WebControls;
+using DataAccess.Models;
 
 namespace WebFormsClient
 {
-    public partial class SubjectInGroupsPage : System.Web.UI.Page
+    public partial class CartsPage : System.Web.UI.Page
     {
-        private WebClientCrudService<Passanger> webClient = new WebClientCrudService<Passanger>("PassangerService.svc");
+        private WebClientCrudService<Cart> webClient = new WebClientCrudService<Cart>("CartService.svc");
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,17 +30,16 @@ namespace WebFormsClient
                         scope.Complete();
                     }
 
-                    Thread.Sleep(3000);
-                    Response.Redirect("subjectingroupspage");
+                    Response.Redirect("cartspage");
                     break;
                 case "Update":
-                    Response.Redirect("subjectingroupCreatePage?ID=" + e.CommandArgument);
+                    Response.Redirect("cartCreatePage?ID=" + e.CommandArgument);
                     break;
             }
         }
         protected void OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("subjectingroupCreatePage");
+            Response.Redirect("cartCreatePage");
         }
-    }
+}
 }

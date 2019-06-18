@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SubjectInGroupCreatePage.aspx.cs" Inherits="WebFormsClient.SubjectInGroupCreatePage"  MasterPageFile="~/Site.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PassangerCreatePage.aspx.cs" Inherits="PassangerCreatePage"  MasterPageFile="~/Site.Master"%>
 
 <asp:Content ID="SubjectInroupCreatePage" ContentPlaceHolderID="MainContent" runat="server">
     <div>

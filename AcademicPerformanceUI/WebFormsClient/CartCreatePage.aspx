@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Site.Master" CodeBehind="GroupCreatePage.aspx.cs" Inherits="WebFormsClient.GroupCreatePage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Site.Master" CodeBehind="CartCreatePage.aspx.cs" Inherits="CartCreatePage" %>
 
 
 <asp:Content ID="GroupCreatePage" ContentPlaceHolderID="MainContent" runat="server">
